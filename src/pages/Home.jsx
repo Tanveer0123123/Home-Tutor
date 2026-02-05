@@ -1,14 +1,28 @@
+import HeroSection from "../components/home/HeroSection";
+import WhyChooseUs from "../components/home/WhyChooseUs";
+import HowItWorks from "../components/home/HowItWorks";
+import AboutUs from "../components/home/AboutUs";
+import AreasWeServe from "../components/home/AreasWeServe";
+import CTASection from "../components/home/CTASection";
+import Testimonials from "../components/home/Testimonials";
+import OurServices from "../components/home/OurServices";
+import TutorProfiles from "../components/home/TutorProfiles";
+import Achievements from "../components/home/Achievements";
 const Home = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-slate-900">
-        Home Tutor in Bhopal
-      </h1>
-      <p className="mt-4 text-gray-600">
-        1-to-1 personalised home tuition by verified tutors.
-      </p>
-    </div>
-  )
-}
+    <>
+      <HeroSection />
+      <AboutUs />
+      <WhyChooseUs />
+      <OurServices/>
+      <HowItWorks />
+      <AreasWeServe />
+      <TutorProfiles/>
+      <Achievements/>
+      <Testimonials/>
+      <CTASection />
+    </>
+  );
+};
 
-export default Home
+export default Home;
