@@ -1,5 +1,6 @@
 const areas = [
   "MP Nagar",
+  "Anand Nagar",
   "Arera Colony",
   "Kolar Road",
   "Bawadiya Kalan",
@@ -13,6 +14,7 @@ const areas = [
   "Misrod",
   "TT Nagar",
   "Piplani",
+  "We Serve All Areas Of Bhopal",
   "More....",
 ];
 
