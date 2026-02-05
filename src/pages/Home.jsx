@@ -8,6 +8,8 @@ import Testimonials from "../components/home/Testimonials";
 import OurServices from "../components/home/OurServices";
 import TutorProfiles from "../components/home/TutorProfiles";
 import Achievements from "../components/home/Achievements";
+import ContactUs from "../components/home/ContactUs";
+import Gallery from "../components/home/Gallery";
 const Home = () => {
   return (
     <>
@@ -19,8 +21,10 @@ const Home = () => {
       <AreasWeServe />
       <TutorProfiles/>
       <Achievements/>
+      <Gallery/>
       <Testimonials/>
       <CTASection />
+      <ContactUs/>
     </>
   );
 };

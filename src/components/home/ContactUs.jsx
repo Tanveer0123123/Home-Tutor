@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
 
-const Contact = () => {
+const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -78,16 +77,6 @@ Message: ${formData.message}`;
 
   return (
     <>
-      <section className="bg-slate-900 text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <h1 className="text-3xl md:text-4xl font-bold">
-          Contact Us
-        </h1>
-        <p className="mt-2 text-gray-300 text-sm">
-          <Link to="/" className="hover:underline">Home</Link> / Contact Us
-        </p>
-      </div>
-    </section>
       {/* CONTACT SECTION */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4">
@@ -211,4 +200,4 @@ Message: ${formData.message}`;
   );
 };
 
-export default Contact;
+export default ContactUs;

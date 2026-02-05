@@ -1,25 +1,79 @@
+import { useEffect, useRef, useState } from "react";
+
 const stats = [
   {
-    value: "120+",
+    value: 120,
     label: "Students Taught",
+    suffix: "+",
   },
   {
-    value: "25+",
+    value: 25,
     label: "Experienced Tutors",
+    suffix: "+",
   },
   {
-    value: "2+ Years",
-    label: "Teaching Experience",
+    value: 2,
+    label: "Years Teaching Experience",
+    suffix: "+",
   },
   {
-    value: "10+",
+    value: 10,
     label: "Areas Covered in Bhopal",
+    suffix: "+",
   },
 ];
 
 const Achievements = () => {
+  const sectionRef = useRef(null);
+  const [startCount, setStartCount] = useState(false);
+  const [counts, setCounts] = useState(stats.map(() => 0));
+
+  // Detect when section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartCount(true);
+          observer.disconnect(); // run only once
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Counter animation
+  useEffect(() => {
+    if (!startCount) return;
+
+    stats.forEach((stat, index) => {
+      let current = 0;
+      const increment = Math.ceil(stat.value / 50); // smoothness control
+
+      const timer = setInterval(() => {
+        current += increment;
+
+        if (current >= stat.value) {
+          current = stat.value;
+          clearInterval(timer);
+        }
+
+        setCounts((prev) => {
+          const updated = [...prev];
+          updated[index] = current;
+          return updated;
+        });
+      }, 30);
+    });
+  }, [startCount]);
+
   return (
-    <section className="bg-slate-50 py-24">
+    <section ref={sectionRef} className="bg-slate-50 py-24">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
@@ -39,8 +93,9 @@ const Achievements = () => {
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
           {stats.map((item, i) => (
             <div key={i}>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900">
-                {item.value}
+              <h3 className="text-3xl md:text-4xl font-bold text-sky-500">
+                {counts[i]}
+                {item.suffix}
               </h3>
               <p className="mt-2 text-gray-600">
                 {item.label}
