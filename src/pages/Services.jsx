@@ -52,12 +52,24 @@ const Services = () => {
       </section>
 
       {/* SERVICES SECTION */}
-      <section className="bg-white py-24">
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="bg-gradient-to-b from-white via-sky-50 to-slate-50  py-24">
+         {/* Heading */}
+        <div className="text-center max-w-2xl mx-auto">
+          <span className="text-sky-500 font-semibold uppercase text-sm tracking-wide">
+            Our Services
+          </span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-slate-900">
+            Services Designed for Better Learning
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            Thoughtfully designed home tuition services for students and parents
+          </p>
+        </div>
+        <div className="  mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {servicesData.map((service) => (
             <div
               key={service.id}
-              className="group overflow-hidden rounded-2xl border border-gray-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="bg-gradient-to-br from-slate-200 via-sky-100 group overflow-hidden rounded-2xl border border-gray-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <img
                 src={service.img}

@@ -7,8 +7,8 @@ import {
   MapPin,
   ChevronRight,
 } from "lucide-react";
-import { NavLink } from "react-router-dom";
-// import logo from "../assets/Logo-img2.png";
+import {Link, NavLink } from "react-router-dom";
+import Logo from "../assets/Tutor-bhaiya-logo3.png"
 
 const Footer = () => {
   return (
@@ -19,10 +19,19 @@ const Footer = () => {
 
           {/* COMPANY INFO */}
           <div>
-            {/* <img src={logo} alt="Home Tutor Logo" className="w-28 mb-4" /> */}
+            <Link to="/" className="text-xl font-bold text-slate-900">
+            <div>
+              <img
+                src={Logo}
+                alt="Tutor bhaiya logo"
+                className="h-18 md:h-24 w-auto object-contain"
+              />
+            </div>
+            </Link>
+
 
             <p className="text-md leading-relaxed">
-              Home Tutor Bhopal provides trusted and personalised 1-to-1 home
+              Tutor Bhaiya provides trusted and personalised 1-to-1 home
               tuition with verified tutors to help students learn better and
               grow with confidence.
             </p>
@@ -46,7 +55,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="text-sm">Need Help?</p>
-                <p className="text-white font-semibold">+91 77708 62216</p>
+                <p className="text-white font-semibold">+91 7697746196</p>
               </div>
             </div>
           </div>
@@ -82,7 +91,8 @@ const Footer = () => {
                 { name: "Home", to: "/" },
                 { name: "About Us", to: "/about" },
                 { name: "Our Services", to: "/services" },
-                { name: "Our Tutors", to: "/tutors" },
+                { name: "Students", to: "/student" },
+                { name: "Our Tutors", to: "/become-tutor" },
                 { name: "Contact Us", to: "/contact" },
               ].map((link, i) => (
                 <li key={i} className="flex items-center gap-2">
@@ -111,7 +121,7 @@ const Footer = () => {
 
             <div className="flex gap-3 text-md mb-3">
               <Phone size={18} className="text-sky-500" />
-              <p>+91 77708 62216</p>
+              <p>+91 7697746196</p>
             </div>
 
             <div className="flex gap-3 text-md">
@@ -125,7 +135,7 @@ const Footer = () => {
 
       {/* COPYRIGHT */}
       <div className="border-t border-gray-700 py-4 text-center text-md">
-        © {new Date().getFullYear()} Home Tutor Bhopal. All Rights Reserved.
+        © {new Date().getFullYear()} Tutor Bhaiya. All Rights Reserved.
       </div>
     </footer>
   );

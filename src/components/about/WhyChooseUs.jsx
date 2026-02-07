@@ -1,9 +1,9 @@
-// import chooseImg from "../assets/goods-5.jpeg";
+import img from '../../assets/tutor-bhaiya-1.jpg'
 import { CheckCircle } from "lucide-react";
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-gradient-to-b from-white via-sky-50 to-slate-50 py-24">
       <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT CONTENT */}
@@ -13,7 +13,7 @@ const WhyChooseUs = () => {
           </span>
 
           <h2 className="mt-3 text-3xl md:text-4xl font-bold text-slate-900 leading-snug">
-            Why Parents Trust HomeTutor Bhopal
+            Why Parents Trust Tutor Bhaiya
           </h2>
 
           <p className="mt-6 text-lg text-gray-600 leading-relaxed">
@@ -41,11 +41,11 @@ const WhyChooseUs = () => {
 
         {/* RIGHT IMAGE */}
         <div className="flex justify-center">
-          {/* <img
-            src={chooseImg}
+          <img
+            src={img}
             alt="Why Choose Home Tutor"
-            className="w-full max-w-md rounded-xl shadow-lg object-cover"
-          /> */}
+            className=" rounded-xl "
+          />
         </div>
 
       </div>

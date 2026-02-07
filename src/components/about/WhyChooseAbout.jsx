@@ -30,7 +30,7 @@ const features = [
 
 const WhyChooseUsAbout = () => {
   return (
-    <section className="bg-slate-50 py-24">
+    <section className="bg-gradient-to-br from-slate-200 via-sky-100 py-24">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}

@@ -20,7 +20,7 @@ const areas = [
 
 const AreasWeServe = () => {
   return (
-    <section className="bg-slate-50 py-24">
+    <section className="bg-gradient-to-b from-white via-sky-50 to-slate-50 py-24">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
@@ -43,7 +43,7 @@ const AreasWeServe = () => {
           {areas.map((area, i) => (
             <span
               key={i}
-              className="rounded-full border border-gray-200 bg-white px-5 py-2 text-sm font-medium text-gray-700 shadow-sm hover:border-sky-500 hover:text-sky-500 transition"
+              className="rounded-full border border-gray-200 bg-white px-5 py-2 text-sm font-medium text-gray-700 shadow-sm hover:border-sky-500 hover:text-sky-500 transition bg-gradient-to-br from-slate-200 via-sky-100"
             >
               {area}
             </span>

@@ -3,7 +3,7 @@ const MissionVision = () => {
     <section className="bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-8">
 
-        <div className="bg-white p-6 rounded-lg shadow-sm">
+        <div className="bg-gradient-to-br from-slate-200 via-sky-100 p-6 rounded-lg shadow-sm">
           <h3 className="text-xl font-semibold text-slate-900">
             Our Mission
           </h3>
@@ -13,7 +13,7 @@ const MissionVision = () => {
           </p>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-sm">
+        <div className="bg-gradient-to-br from-slate-200 via-sky-100 p-6 rounded-lg shadow-sm">
           <h3 className="text-xl font-semibold text-slate-900">
             Our Vision
           </h3>

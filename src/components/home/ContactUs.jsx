@@ -78,7 +78,7 @@ Message: ${formData.message}`;
   return (
     <>
       {/* CONTACT SECTION */}
-      <section className="bg-white py-20">
+      <section className="bg-gradient-to-b from-white via-sky-50 to-slate-50 py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
 

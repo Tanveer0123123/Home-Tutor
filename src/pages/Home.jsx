@@ -12,7 +12,7 @@ import ContactUs from "../components/home/ContactUs";
 import Gallery from "../components/home/Gallery";
 const Home = () => {
   return (
-    <>
+    < >
       <HeroSection />
       <AboutUs />
       <WhyChooseUs />

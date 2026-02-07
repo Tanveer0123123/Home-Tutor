@@ -36,7 +36,7 @@ const services = [
 
 const OurServices = () => {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-gradient-to-b from-white via-sky-50 to-slate-50 py-24">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
@@ -57,7 +57,7 @@ const OurServices = () => {
           {services.map((service, i) => (
             <div
               key={i}
-              className="group overflow-hidden rounded-2xl border border-gray-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="bg-gradient-to-br from-slate-200 via-sky-100 group overflow-hidden rounded-2xl border border-gray-100  transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               {/* Image */}
               <img

@@ -5,60 +5,66 @@ const HeroSection = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrent((prev) =>
         prev === heroData.length - 1 ? 0 : prev + 1
       );
-    }, 4000); // 4 seconds
+    }, 4000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, []);
 
-  const data = heroData[current];
+  const prevSlide = () => {
+    setCurrent(current === 0 ? heroData.length - 1 : current - 1);
+  };
+
+  const nextSlide = () => {
+    setCurrent(current === heroData.length - 1 ? 0 : current + 1);
+  };
 
   return (
-    <section className="bg-slate-50 transition-all duration-500">
-      <div className="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-10 items-center">
-        
-        {/* Text Section */}
-        <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-            {data.title}
+    <section className="relative h-[85vh] w-full overflow-hidden">
+
+      {/* Background Images */}
+      {heroData.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === current ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <img
+            src={slide.imageText}
+            className="w-full h-full object-fill"
+            alt=""
+          />
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
+      ))}
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6">
+        <div className="text-white max-w-2xl">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            {heroData[current].title}
           </h1>
 
-          <p className="mt-6 text-lg text-gray-600">
-            {data.description}
+          <p className="mt-4 text-lg text-gray-200">
+            {heroData[current].description}
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <button className="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-md font-medium">
-              {data.primaryBtn}
+          <div className="mt-8 flex gap-4">
+            <button className="bg-sky-500 hover:bg-sky-300 px-6 py-3 rounded font-semibold">
+              Call Now
             </button>
-            <button className="border border-sky-500 text-sky-500 px-6 py-3 rounded-md font-medium hover:bg-sky-50">
-              {data.secondaryBtn}
-            </button>
-          </div>
-        </div>
 
-        {/* Image Section */}
-        <div className="hidden lg:block">
-          <div className="h-80 bg-white rounded-lg shadow flex items-center justify-center text-gray-400">
-            {data.imageText}
+            <button className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded font-semibold">
+              WhatsApp
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Dots Indicator */}
-      <div className="flex justify-center gap-2 pb-6">
-        {heroData.map((_, index) => (
-          <span
-            key={index}
-            className={`h-2 w-2 rounded-full ${
-              index === current ? "bg-sky-500" : "bg-gray-300"
-            }`}
-          ></span>
-        ))}
-      </div>
     </section>
   );
 };

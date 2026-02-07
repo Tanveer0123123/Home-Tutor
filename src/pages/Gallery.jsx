@@ -40,7 +40,7 @@ const Gallery = () => {
         </p>
       </div>
     </section>
-    <section className="bg-white py-20">
+    <section className="bg-gradient-to-br from-slate-200 via-sky-100 py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
         {/* HEADING */}
